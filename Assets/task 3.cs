@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class task3 : MonoBehaviour
 {
 
-    public float bills;
+    public int bills;
 
     private float hundred;
     private float fifty;
@@ -33,57 +34,80 @@ public class task3 : MonoBehaviour
 
         // holy moly this went up in smoke
         //hundreds
-        hundred = bills % 100;
+        hundred = bills/100;
         if (hundred > 0)
         {
-            hundred = bills - (hundred * 100);
-            Debug.Log(hundred + "hundreds");
-            fifty = hundred;
+            int count = bills / 100;
+            if (count > 0)
+            {
+                bills -= count * 100;
+                Debug.Log(hundred + "hundreds");
+            }
         }
 
         //fifty
-        fifty = hundred % 50;
+        fifty = bills / 50;
         if (fifty > 0)
         {
-             hundred = hundred - (fifty * 50);
-            Debug.Log(fifty + "fifties");
+            int count = bills / 50;
+            if (count > 0)
+            {
+                bills -= count * 50;
+                Debug.Log(fifty + "Fifty");
+            }
         }
-
         //twenty
-         twenty = fifty % 20;
+        twenty = bills / 20;
         if (twenty > 0)
         {
-                        fifty = fifty - (twenty * 20);
-
-            Debug.Log(twenty + "twenties");
+            int count = bills / 20;
+            if (count > 0)
+            {
+                bills -= count * 20;
+                Debug.Log(twenty + "twenty");
+            }
         }
+
+
 
         //ten
-         ten = twenty % 10;
+        ten = bills / 10;
         if (ten > 0)
         {
-                        twenty = twenty - (ten * 10);
-
-            Debug.Log(ten + "tens");
+            int count = bills / 10;
+            if (count > 0)
+            {
+                bills -= count * 10;
+                Debug.Log(ten + "ten");
+            }
         }
+
 
         //five
-         five = ten % 5;
-        if (hundred > 0)
+        five = bills / 5;
+        if (five > 0)
         {
-                        ten = ten - (five * 5);
-
-            Debug.Log(five + "fives");
+            int count = bills / 5;
+            if (count > 0)
+            {
+                bills -= count * 5;
+                Debug.Log(five + "five");
+            }
         }
+
 
         //one
-         one = five % 1;
+        one = bills / 1;
         if (one > 0)
         {
-                        five = five - (one);
-
-            Debug.Log(one + "ones");
+            int count = bills / 1;
+            if (count > 0)
+            {
+                bills -= count * 1;
+                Debug.Log(one + "one");
+            }
         }
+
 
     }
 }
