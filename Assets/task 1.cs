@@ -5,6 +5,8 @@ using UnityEngine;
 public class task1 : MonoBehaviour
 {
 
+    //Emily Thorsen
+
     public float modules;
     public float reading;
     public float quizzes;
